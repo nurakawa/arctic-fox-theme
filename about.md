@@ -6,3 +6,9 @@ permalink: /about/
 
 personal website under construction!
 
+
+
+Contact:   <a href="mailto:nkawa@berkeley.edu"> <i class="fa fa-envelope-o"></i> </a>
+  <a href="http://github.com/nurakawa"> <i class="fa fa-github"></i></a>
+  <a href="http://linkedin.com/in/nurakawa"> <i class="fa fa-linkedin"></i></a>
+  <a href="http://twitter.com/nura_kawa"> <i class="fa fa-twitter"></i></a> <BR />
