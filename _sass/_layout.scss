@@ -2,7 +2,9 @@
  * ============================================== */
     .site-header {
         height: 55px;
-        background-color: #e8e1e1;
+        background-color: white;
+        border-bottom: 1px solid lightgrey;
+        /*background-color: #e8e1e1;*/
         position: relative;
         width: 100%;
     }
@@ -13,7 +15,8 @@
         padding-top: 16px;
         float: right;
         margin-right: 25px;
-        font-family: "Arial Black", Gadget, sans-serif;
+        font-family: Impact, Charcoal, sans-serif;
+        /*font-family: "Arial Black", Gadget, sans-serif;*/
         text-transform: uppercase;
 
         .menu-icon {
@@ -66,7 +69,7 @@
             }
 
             &:hover {
-                background-color:$brand-color;
+                color:$brand-color;
                 /*opacity: 0.8*/
             };
         }
