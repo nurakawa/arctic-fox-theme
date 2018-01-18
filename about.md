@@ -3,6 +3,9 @@ layout: page
 title: About
 permalink: /about/
 ---
+
+personal website under construction
+
 *Arctic Fox* is a lightweight and customisable Jekyll Theme.
 
 * Author: Camille Diez
