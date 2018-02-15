@@ -80,7 +80,7 @@
     .footer {
         padding-bottom: 3em;
         margin: auto;
-        font-size: 12px;
+        font-size: 18px;
         font-family: Open Sans;
         color: #959595;
     }
@@ -99,6 +99,20 @@
         height: 40px;
         border-radius: 100%;
         margin-bottom: 3px;
+  }
+  .fa {
+    display: inline-block;
+    list-style-type: none;
+    color: black;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 0px;
+    padding-left: 5px;
+    text-decoration: none;
+  }
+  
+  .fa:hover{
+	  color: $brand-color;
   }
 
 /* Individual Posts
@@ -127,10 +141,11 @@
     }
 
     .post-link {
-        font-family: $nura-font-family;
-        font-weight: 300;
+        font-family: 'Open Sans';
+        font-weight: 400;
+	text-decoration: underline;
         font-size: 1.5em;
-        letter-spacing: -1px;
+        //letter-spacing: -1px;
         color: #454545;
         display: block;
         width: 100%;
@@ -201,6 +216,7 @@
     font-size: 36px;
     margin-left: 50px;
 }
+
 
 #main {
     transition: margin-left .5s;
