@@ -8,6 +8,7 @@ url: "https://nurakawa.github.io" # the base hostname & protocol for your site
 twitter_username: username
 github_username: nurakawa
 
+
 # Build settings
 markdown: kramdown
 markdown_ext:  markdown,mkdown,mkdn,mkd,md

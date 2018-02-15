@@ -1,9 +1,15 @@
 ---
 ---
 @charset "utf-8";
+/* Fonts
+ * ============================================== */
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic|Source+Sans+Pro');
+
+
 
 // Our variables
 $base-font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+$nura-font-family: 'Nanum Gothic', Helvetica, sans-serif;
 $base-font-size:   16px;
 $small-font-size:  $base-font-size * 0.895;
 $large-font-size:  $base-font-size * 1.40;
@@ -14,8 +20,8 @@ $spacing-unit:     30px;
 
 $text-color:       #454545;
 $background-color: #FFF;
-$brand-color:      #b2497d;
-
+//$brand-color:    #b2497d;
+$brand-color:	   #ce9b4f;
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 30%);
 $grey-color-dark:  darken($grey-color, 25%);

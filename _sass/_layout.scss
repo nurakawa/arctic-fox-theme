@@ -15,7 +15,7 @@
         padding-top: 16px;
         float: right;
         margin-right: 25px;
-        font-family: Impact, Charcoal, sans-serif;
+	font-family: 'Nanum Gothic', sans-serif;
         /*font-family: "Arial Black", Gadget, sans-serif;*/
         text-transform: uppercase;
 
@@ -110,7 +110,7 @@
 
     .page-heading {
         font-size: 20px;
-        padding-top: 2px;
+        padding-top: 0;
     }
 
 /* Archive
@@ -140,6 +140,7 @@
         }
     }
 
+
     .post-meta {
         font-size: $small-font-size;
         color: $grey-color-light;
@@ -162,3 +163,52 @@
     .post-content {
         margin-bottom: $spacing-unit;
     }
+
+/* Navbar
+ * ============================================== */
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #f0e8dc;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 22px;
+    //color: #818181;
+    color: #3d3b3c;
+    display: block;
+    transition: 0.5s;
+}
+
+.sidenav a:hover {
+    color: $brand-color;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 14px;}
+}
+
