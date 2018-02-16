@@ -8,8 +8,7 @@
 
 
 // Our variables
-$base-font-family: 'Amaranth', Helvetica, sans-serif;
-$nura-font-family: 'Open Sans', Helvetica, sans-serif;
+$base-font-family: 'Amaranth', 'Open Sans', Helvetica, sans-serif;
 $base-font-size:   16px;
 $small-font-size:  $base-font-size * 0.895;
 $large-font-size:  $base-font-size * 1.40;
@@ -21,7 +20,7 @@ $spacing-unit:     30px;
 $text-color:       #454545;
 $background-color: #FFF;
 //$brand-color:    #b2497d;
-$brand-color:	   #ce9b4f;
+$brand-color:	   #FF69B4;
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 30%);
 $grey-color-dark:  darken($grey-color, 25%);

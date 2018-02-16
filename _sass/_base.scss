@@ -19,13 +19,13 @@
         -webkit-text-size-adjust: 100%;
     }
 
-    #main h1, h2, h3, h4, h5 {			// for the main page
-	font-famiy: $base-font-family;
+    body h1, h2, h3, h4, h5 {			// for the main page
+	font-family: 'Amaranth';
     }
 
-    #main p{
-	font-family: $nura-font-family;
-	font-size: 20px;
+    body p{
+	font-family: Open Sans;
+	font-size: 18px;
     }
 
 /* Set Margin Bottom for Vertical Rhythm
@@ -145,8 +145,8 @@
         max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
         margin-right: auto;
         margin-left: auto;
-        padding-right: $spacing-unit;
-        padding-left: $spacing-unit;
+        padding-right: $spacing-unit ;
+        padding-left: $spacing-unit ;
         @extend %clearfix;
 
         @include media-query($on-laptop) {

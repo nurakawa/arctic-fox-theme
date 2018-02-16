@@ -1,79 +1,28 @@
 ---
-layout: home
+layout: default
 ---
+<style>
+#siteTitle{
+	font-size:70px;
+	letter-spacing:-4px;
+}
+</style>
 
-<div id="main">
-  <span id="openButton" style="font-size:36px;cursor:pointer" onclick="openNav()">&#9776; <h1 id = "home" class="page-heading">{{ site.title }}</h1> </span>
-  <span id="mobileTitle" style="font-size:32px;"> <h1 id = "home" class="page-heading" > {{ site.title }} </h1> </span>
-  <br><br>
-  <h1 id="about"> about </h1><br>
+<div>
+	<div id="siteTitle"> {{site.title}} </div>
+	<p id="spacer"> </p>
 
-  <p>Welcome to my website! I maintain this page to share my projects, blog posts, and interests. I am always open to conversations about new ideas and projects!  <br><br>
-
-I studied Statistics at  UC Berkeley, and I am fascinated with statistical machine learning and large-scale data analysis. I am a huge supporter of the <a href="https://www.r-project.org/">R Project for Statistical Computing</a>, and I am currently working with the U.C. Berkeley Department of Environmental Engineering on an R package for predictive modeling in Geosciences.
-
-
-</p>
-
-
-  <br>
-
-  <h1 id="projects"> projects </h1>
-  <br>
-  <ul>
-	<li>   <h2> Website: arnaout.ai </h2> <p> (HTML, CSS, Ruby) <br><br>
-	I created the official website of the Arnaout Lab at UCSF (currently hosted <a href='https://nurakawa.github.io/arnaout'> here</a>). The website uses the <a href='https://mmistakes.github.io/minimal-mistakes/'> Minimal Mistakes Jekyll theme</a>, and the code is open-source and available on <a href='https://github.com/nurakawa/arnaout'> Github </a>. <br>
+	<p> Welcome! I maintain this page to share insights, and interests. I am always <a href="/contact/">open to conversations</a> about new ideas and projects! I write about a variety of topics related to data science and machine learning:</p><br> 
+  	<!--<ul class="post-list">-->
+  	<ul>
+    	{% for post in site.posts %}
+      		<li style="font-size:12px;">
+        	<a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      		</li>
+    	{% endfor %}
+  	</ul>
 
 
-	</p></li>
-  <br>
-  <br>
 
-	<li>   <h2> Minority-Serving Institutions </h2> <p> (R, Shiny, Web-scraping, Gradient-boosted trees, Lasso) <br> <br>
+</div>
 
-This project was completed for the <a href='http://www.gastonsanchez.com/stat159/'> Reproducible and Collaborative Statistical Data Science </a> course at U.C. Berkeley. The objective of this project was to use open-access data to determine universities that serve minority students. The project utilized data cleaning, visualization, and classification. The code and report is available on <a href='https://github.com/jwilber/Education_Project'>Github</a>, as are two Shiny Apps <a href='https://shannon-s-chang.shinyapps.io/xgboost-shiny-app/'>(here)</a> and <a href='https://shannon-s-chang.shinyapps.io/pca-shiny-app/'>(here)</a>.
-
-</p> </li>
-
-  </ul>
-
-  
-  <br>
-  <br>
-
- 
-  <h1 id="recent-posts" > blog posts </h1>
-
-  <br>
-  <p>I write posts on a variety of topics related to data science and machine learning:</p><br> 
-
-  <!--<ul class="post-list">-->
-  <ul>
-    {% for post in site.posts %}
-      <li style="font-size:14px">
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
-  <br>
-  <br>
-
-  <h1 id="contact"> contact </h1>
-  <br>
-  <p> I can be best reached by email at <strong>nkawa (at) berkeley (dot) edu</strong>, or via
-
-  <a href="http://github.com/nurakawa"> <i class="fa fa-github fa-lg"></i></a>
-  <a href="http://linkedin.com/in/nurakawa"> <i class="fa fa-linkedin fa-lg"></i></a>
-  <a href="http://twitter.com/nura_kawa"> <i class="fa fa-twitter fa-lg"></i></a>
-  <a href="http://medium.com/@nurakawa"> <i class="fa fa-medium fa-lg"></i> </a> .
-</p>
-
-  <br>
-  <br>
-  <br>
-  <br>
-
-<!-- Credits for theme -->
-<center> Based on a theme by <a href=http://diezcami.github.io target="_blank">Camille Diez</a>, Powered by <a href=http://jekyllrb.com target="_blank">Jekyll</a> </center> <br> 
-
-</div>    
