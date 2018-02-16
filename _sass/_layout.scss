@@ -8,6 +8,11 @@
         position: relative;
         width: 100%;
 	padding-top:10px;
+
+	@include media-query($on-palm) {
+	   border-bottom: 1px solid $grey-color-light;
+	}
+
     }
 
     .site-header a {color: black};
