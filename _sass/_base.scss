@@ -83,7 +83,8 @@
 /* Links
  * ============================================== */
     a {
-        color: darken($brand-color, 5%);
+	//color: black;        
+	color: darken($brand-color, 5%);
         text-decoration: none;
 	font-weight:550;
 
