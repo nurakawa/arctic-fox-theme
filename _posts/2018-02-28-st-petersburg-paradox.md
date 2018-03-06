@@ -16,12 +16,12 @@ A friend of mine recently told me about the St. Petersburg Paradox, a puzzle pre
 
 Suppose you play the following game at a casino:
 
-<i>The game master starts with $1 on the table, and tells you to flip a coin. If you flip "Heads", the game master doubles the money to $2. You flip the coin again. If you again get "Heads", then the money on the table becomes $4, then $8, $16, $32, and so on. If you flip "Tails", the game is over, and you take the money from the table (however, if you flip "Tails" on the first trial, you take $0). </i>
+<i>The game master starts with $1 on the table, and tells you to flip a coin. If you flip "Heads", the game master doubles the money to $2. You flip the coin again. If you again get "Heads", then the money on the table becomes $4, then $8, $16, $32, and so on. If you flip "Tails", the game is over, and you take the money from the table (however, if you flip "Tails" on the first trial, you take $1). </i>
 
 The game master charges you $100 to play this game. Would that be a fair price to charge?
 
 Let's consider a few scenarios. Suppose you play the game once, and you roll two heads in a row before hitting a tail. Then, your flip pattern is "H, H, T". Your expected payoff would be $$-100 + 2^2 = -96.$$ Now suppose you roll three heads in a row, and then a tail. Then, your flip pattern is "H, H, H, T", your expected payoff is: $$ -100 + 2^3 = -92. $$ In order to actually make money from this game, you would have to flip at least 
-100 heads in a row! Given that this has probability $$\frac{1}{2^{100}}$$, you intuitively would not pay more than $5-10 for this game.
+7 heads in a row! Given that this has probability $$\frac{1}{2^{7}} = 0.0078125$$, you intuitively would not pay more than $5-10 for this game.
 
 
 Now, let $$k$$ denote the number of heads in a row that you flip. We can take the Expected Value of your payoff, in other words the amount of money you expect to make if you play this game repeatedly for a long time. Your expected payoff is: 
