@@ -79,7 +79,8 @@ Simulate_game <- function(n){
 }
 
 
-# based on:  https://gist.github.com/grano/fc854a2ffb2d6af8793b#file-st-petersburg-simulations-r
+# based on:  https://gist.github.com/grano/
+#fc854a2ffb2d6af8793b#file-st-petersburg-simulations-r
 
 library(ggplot2)
 
@@ -105,7 +106,7 @@ RunSimulation()
 
 ```
 
-<img src="{{site.baseurl}}/static/game_plot.png"/>
+<img src="{{site.baseurl}}/assets/images/game_plot.png"/>
 
 
 

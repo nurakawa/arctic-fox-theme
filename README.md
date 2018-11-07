@@ -1,6 +1,5 @@
+#nurakawa.github.io
 
-## About
-This is a personal website that contains blog posts relating to Statistics, Machine Learning and R. It is created with Jekyll and Github pages. 
+This is my personal website. 
 
-## Theme  
-This website uses Arctic Fox, an open-source minimal theme for Jekyll. View the demo at http://diezcami.github.io/arctic-fox-theme .
+It uses the <a href="https://jekyllthemes.io/theme/brume"> Brume</a> Jekyll theme.
