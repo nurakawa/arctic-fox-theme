@@ -39,9 +39,10 @@ title: Home
     <div class="post_title">
       <a href="{{ post.url | absolute_url }}" title="{{ post.title }}">{{ post.title }}</a>
     </div>
-    <div class="post-date">
+<!---   
+<div class="post-date">
       <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%-d %B" }}</time>
-    </div>
+    </div>--->
   </article>
 
   {% if forloop.last %}
