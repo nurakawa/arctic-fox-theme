@@ -5,7 +5,7 @@ title: About
 
 Welcome! I am Nura. 
 
-<img style="width: 320px; height: 320px; border-radius: 10%;" src="{{site.baseurl}}/assets/images/nura.jpg"/>
+<img style="width: 280px; height: 280px; border-radius: 10%;" src="{{site.baseurl}}/assets/images/nura.jpg"/>
 
 
 
