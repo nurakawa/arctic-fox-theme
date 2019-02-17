@@ -49,7 +49,7 @@ class Node:
 		if self.left is not None:
 			children += (self.left,)
 		if self.right is not None:
-			children += (self.right)
+			children += (self.right,)
 		return children
 
 
