@@ -14,9 +14,9 @@ body {
   background-color: white;
   /*color: #333;*/
   /*border-top: 5px solid #333;*/
-  border-top: 5px solid #f47983;
+  border-top: 10px solid #f47983;
   font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 500;
+  font-weight: 300;
   line-height: 1.5;
 
   -webkit-font-smoothing: antialiased;
