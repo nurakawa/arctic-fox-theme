@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Binary Search Trees in Python
+title: Binary Search Trees
 date: 2019-02-03
 categories:
 ---
