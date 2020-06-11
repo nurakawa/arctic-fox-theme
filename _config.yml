@@ -7,7 +7,7 @@ permalink: /:title
 
 url:
 baseurl:
-color_scheme: black
+color_scheme: ruby
 
 # Custom options:
 # color_scheme: azul|ruby|amber|avocado|black|nura|kawa
