@@ -16,7 +16,8 @@ body {
   /*border-top: 5px solid #333;*/
   /*font-family: 'Source Sans Pro', sans-serif;*/
   font-family: 'Courier New';
-  font-weight: 300;
+  font-size: 11pt;
+  font-weight: 250;
   line-height: 1.5;
 
   -webkit-font-smoothing: antialiased;
@@ -30,6 +31,10 @@ hr,
 .fluid-width-video-wrapper,
 .highlight {
   margin-bottom: 20px;
+}
+
+p {
+ font-size: 11.5pt;
 }
 
 blockquote {
