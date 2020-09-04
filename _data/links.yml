@@ -2,5 +2,8 @@
   title: Home
 - url: /blog/
   title: Blog
+- url: /cv/
+  title: CV
 - url: https://www.github.com/nurakawa
   title: Github
+
