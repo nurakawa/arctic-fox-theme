@@ -16,9 +16,8 @@ body {
   background-color: white;
   /*color: #333;*/
   /*border-top: 5px solid #333;*/
-  /*font-family: 'Source Sans Pro', sans-serif;*/
-  /*font-family: 'Courier New';*/
-  font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace;
+  font-family: 'Source Sans Pro', sans-serif;
+  /* WHAT I WAS USING font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace;*/
   font-weight: 250;
   line-height: 1.5;
 
@@ -166,11 +165,12 @@ dd {
 }
 
 .kawa a {
-  color: #0c746a;
+  /*color: #be0000;*/
+  color: #f10000;  
 }
 
 .kawa a:hover {
-  color: #119b8e;
+  color: #a50000;
 }
 
 .black a {
@@ -238,7 +238,8 @@ header > nav#main-navigation a {
 header > nav#main-navigation a:hover,
 header > nav#main-navigation a.current {
   color: #000000;
-  border-bottom: none;
+  border-bottom: none;  
+  border-bottom:2px solid;
 }
 
 header > nav#main-navigation a:hover {
@@ -249,6 +250,7 @@ header > nav#main-navigation a:hover {
 header > nav#main-navigation a.current {
   /*background-color: #333;*/
 	/*background-color: #f47983;*/
+
 }
 
 nav#main-navigation a.trigger {
