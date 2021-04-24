@@ -1,23 +1,24 @@
 ---
 layout: home
-title:  Calendar Heatmap - Google Mobility Data
+title:  Covid-19 in New Zealand - Google Mobility Data
 ---
 <!DOCTYPE html>
 <html lang="en">
   <body>
     <br>
     <p>Prototype for course "Data Visualization". Visualizing change in mobility in 2020 using Google Mobility Data. 
-    Please select a country and a variable! </p>
+    Please make some selections! </p>
     <!-- Select country 
     TODO: Filter by region == ""
-    -->    
+    source: https://bl.ocks.org/Saigesp/0b0995536ec3e691cec6725783870a70
+        
     <select id="country">
       <option value="./assets/2020_NZ_Region_Mobility_Report.csv">New Zealand</option>
       <option value="./assets/2020_NZ_Region_Mobility_Report.csv">Belgium</option>
       <option value="./assets/2020_LB_Region_Mobility_Report.csv">Lebanon</option>
       <option value="./assets/2020_FI_Region_Mobility_Report.csv">Finland</option>
     </select>
-
+    -->
     <!-- Select Indicator -->   
     <select id="ddlViewBy">
       <option value="parks_percent_change_from_baseline">retail and recreation</option>
@@ -26,9 +27,18 @@ title:  Calendar Heatmap - Google Mobility Data
       <option value="workplaces_percent_change_from_baseline">workplaces</option>
       <option value="residential_percent_change_from_baseline">residential</option>
     </select>
+        
+    <select id="indicator">
+      <option value="new_cases">new cases</option>
+      <option value="new_deaths">new deaths</option>
+      <!--<option value="icu_patients">icu patients</option>
+      <option value="hosp_patients">hospital patients</option>
+      <option value="total_cases">total cases</option>
+      <option value="total_deaths">total deaths cases</option>
+      -->
+    </select>
 
-    <div id="calendar" style="width: 960px; height: 200px;"></div>
-
+    <div id="calendar" style="width: 100%; height: 150px;"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script>
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
     <script src="d3.calendar.js"></script>
@@ -37,23 +47,26 @@ title:  Calendar Heatmap - Google Mobility Data
             d3.select("#ddlViewBy").on("change", function(d){
               selectedGroup = String(this.value);
               d3.select('#calendar .chart').remove();
-              updateChart(selectedGroup, selectedCountry)
+              updateChart(selectedGroup)
             })
-              d3.select("#country").on("change", function(d){
-              selectedCountry = this.value;
-              d3.select('#calendar .chart').remove();
-              updateChart(selectedGroup, selectedCountry)
-            })
+            //  d3.select("#country").on("change", function(d){
+            //  selectedCountry = this.value;
+            //  d3.select('#calendar .chart').remove();
+            //  updateChart(selectedGroup, selectedCountry)
+            //})
 
               
             //var e = document.getElementById("ddlViewBy");
             //var strUser = e.options[e.selectedIndex].text;
-        function updateChart(selectedGroup, selectedCountry){
-          //df =  "./assets/nz-mob.csv";
-          df = selectedCountry;
+        function updateChart(selectedGroup){
+        //function updateChart(selectedGroup, selectedCountry){
+          df =  "./assets/2020_NZ_Region_Mobility_Report.csv";
+          //df = selectedCountry;
           //d3.csv("./assets/nz-mob.csv", function(error, data) {
           d3.csv(df, function(error, data) {
             if (error) throw error;
+            
+            df =  "./assets/nz-mob.csv";
 
             d3.timeFormatDefaultLocale({
                 "decimal": ".",
@@ -80,9 +93,34 @@ title:  Calendar Heatmap - Google Mobility Data
             });
             
         };
-
     </script>
-    
     <!-- Underneath: barplot -->
+    <div id="Exports" style="width: 100%; height: 300px;"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script>
+    <script src="d3.barchart.js"></script>
+    <script>
+              d3.select("#indicator").on("change", function(d){
+              selectedInd = String(this.value);
+              d3.select("#Exports").selectAll("*").remove();
+              //d3.select('#Exports .grafico').remove();
+              updateBar(selectedInd)
+            })
+            
+        function updateBar(selectedInd){
+
+        d3.csv('./assets/nz-owid.csv', function(data) {
+            var grafico = new BarChart(d3.select('#Exports'), data, {
+                'key': selectedInd,
+                'label': 'date',
+                'mean': {},
+                'meanlabel': '',
+                'color': 'lightgrey',
+                'title': selectedInd,
+                'source': '',
+            });
+        });
+        };
+
+    </script> 
 </body>
 </html>
