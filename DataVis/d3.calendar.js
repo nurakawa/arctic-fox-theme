@@ -6,7 +6,7 @@ class Calendar{
     
     // Graph configuration
     this.cfg = {
-      'margin': {'top': 30, 'right': 30, 'bottom': 10, 'left': 50},
+      'margin': {'top': 100, 'right': 30, 'bottom': 10, 'left': 50},
       //'key': 'key',
       'key': 'key',
       'datefield': 'date',
@@ -37,7 +37,7 @@ class Calendar{
     this.cfg.rectsize = this.cfg.width/53 < this.cfg.height/7 ? this.cfg.width/53 : this.cfg.height/7;
     this.dayCalc = this.cfg.mondaystart ? function(d) { return (d.getDay() + 6) % 7; } : function(d) { return d.getDay(); }
     this.weekCalc = this.cfg.mondaystart ? d3.timeFormat("%W") : d3.timeFormat("%U");
-    this.cScale = d3.scaleSequential(this.cfg.colorScale);
+    this.cScale = d3.scaleSequential(this.cfg.colorScale).domain([-150,150]);
     
     this.weekDay = d3.timeFormat(self.cfg.weekdayformat);
     this.monthName = d3.timeFormat(self.cfg.monthformat);
