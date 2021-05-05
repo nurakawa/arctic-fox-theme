@@ -9,10 +9,19 @@ class BarChart{
         this.cfg = {
             margin: {top: 40, right: 30, bottom: 50, left: 40},
             key: 'key',
-            label: 'date',
+            //label: 'date',
+            label: ["2020-01-01","2020-01-06","2020-01-13","2020-01-20","2020-01-27",
+"2020-02-03","2020-02-10","2020-02-17","2020-02-24","2020-03-02", "2020-03-09",
+"2020-03-16", "2020-03-23", "2020-03-30", "2020-04-06", "2020-04-13", "2020-04-20", 
+"2020-04-27", "2020-05-04", "2020-05-11", "2020-05-18", "2020-05-25",
+"2020-06-01" ,"2020-06-08", "2020-06-15", "2020-06-22", "2020-06-29", "2020-07-06", 
+"2020-07-13", "2020-07-20", "2020-07-27", "2020-08-03", "2020-08-10",
+"2020-08-17","2020-08-24","2020-08-31","2020-09-07","2020-09-14","2020-09-21","2020-09-28",
+"2020-10-05","2020-10-12","2020-10-19","2020-10-26","2020-11-02","2020-11-09","2020-11-16", 
+"2020-11-23", "2020-11-30", "2020-12-07", "2020-12-14", "2020-12-21", "2020-12-28"],
             color: 'steelblue',
             greycolor: '#CCC',
-            yscaleformat: '.0f',
+            yscaleformat: '0.00f',
             currentkey: false,
             title: false,
             source: false,
@@ -79,16 +88,16 @@ class BarChart{
                 .ticks(3, self.cfg.yscaleformat));
 
         // AXIS
-        //this.xAxis = this.g.append("g")
-        //    .attr("class", "axis axis--x")
-        //    .attr("transform", "translate(0," + this.cfg.height + ")")
-        //    .call(d3.axisBottom(self.xScale));
+        this.xAxis = this.g.append("g")
+            .attr("class", "axis axis--x")
+            .attr("transform", "translate(0," + this.cfg.height + ")")
+            .call(d3.axisBottom(self.xScale));
 
-        //this.xAxis.selectAll("text") 
-        //    .style("text-anchor", "end")
-        //    .attr("dx", "-.8em")
-        //    .attr("dy", "-.6em")
-        //    .attr("transform", "rotate(-90)");
+        this.xAxis.selectAll("text") 
+            .style("text-anchor", "end")
+            .attr("dx", "-.8em")
+            .attr("dy", "-.6em")
+            .attr("transform", "rotate(-90)");
 
         this.itemg = this.g.selectAll('.itemgroup')
             .data(this.data)

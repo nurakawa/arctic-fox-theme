@@ -13,7 +13,7 @@ class Calendar{
       'dateformat': '%d-%m-%Y', // https://github.com/d3/d3-time-format/blob/master/README.md#locale_format
       'title': false,
       'source': false,
-      'rectsize': 10,
+      'rectsize': 12,
       'colorScale': d3.interpolateRdBu,
       'emptycolor': '#EEE',
       'year': false,
