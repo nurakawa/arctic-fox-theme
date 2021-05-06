@@ -6,7 +6,7 @@ class LinearCalendar{
 
         // Graph configuration
         this.cfg = {
-            'margin': {'top': 30, 'right': 20, 'bottom': 40, 'left': 40},
+            'margin': {'top': 30, 'right': 20, 'bottom': 40, 'left': 60},
             'year': 'key',
             'start': 'start',
             'end': 'end',
