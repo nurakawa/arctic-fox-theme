@@ -122,7 +122,16 @@ title:  Mobility in the Age of Covid-19
             });
         
         // Legend
-        var sequentialScale = d3.scaleSequential(d3.interpolateRdBu).domain([150,-150]);
+        //const domainmin = d3.min([newdata, function(d) { return +d.selectedGroup; }], s => +s);
+        //const domainmax = d3.max([newdata, function(d) { return +d.selectedGroup; }], s => +s);
+        
+        //var legendvals = data.filter(function(d){ return d[selectedGroup]});
+        
+        var domainmin = d3.min(newdata, function(d){ return +d[selectedGroup]});
+        var domainmax = d3.max(newdata, function(d){ return +d[selectedGroup]});
+        
+        
+        var sequentialScale = d3.scaleSequential(d3.interpolateRdYlBu).domain([domainmax,domainmin]);
         var svg = d3.select("svg");
         svg.append("g")
         .style("font-size", "10px")

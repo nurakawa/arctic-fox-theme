@@ -14,7 +14,7 @@ class Calendar{
       'title': false,
       'source': false,
       'rectsize': 12,
-      'colorScale': d3.interpolateRdBu,
+      'colorScale': d3.interpolateRdYlBu,
       'emptycolor': '#EEE',
       'year': false,
       'mondaystart': false,
@@ -37,7 +37,8 @@ class Calendar{
     this.cfg.rectsize = this.cfg.width/53 < this.cfg.height/7 ? this.cfg.width/53 : this.cfg.height/7;
     this.dayCalc = this.cfg.mondaystart ? function(d) { return (d.getDay() + 6) % 7; } : function(d) { return d.getDay(); }
     this.weekCalc = this.cfg.mondaystart ? d3.timeFormat("%W") : d3.timeFormat("%U");
-    this.cScale = d3.scaleSequential(this.cfg.colorScale).domain([-150,150]);
+    this.cScale = d3.scaleSequential(this.cfg.colorScale).domain([d3.min(this.data, function(d){ return +d[self.cfg.key]}),
+    d3.max(this.data, function(d){ return +d[self.cfg.key]})]);
     
     this.weekDay = d3.timeFormat(self.cfg.weekdayformat);
     this.monthName = d3.timeFormat(self.cfg.monthformat);
