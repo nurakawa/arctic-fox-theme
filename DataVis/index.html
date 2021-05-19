@@ -19,38 +19,43 @@ title:  Mobility in the Age of Covid-19
     <link type="text/css" rel="stylesheet" href="css/timesheet.css" />-->
   </head>
   <body>
-
+  
+  <p>by Minh Cuong Hoang, Maria Nankova, Shourya Bhattacharya, and Nura Kawa<p>
     
-    <p>This is prototype for course "Data Visualization" at KU Leuven. Our goal is to visualize 
-    the <strong>changes in human mobility</strong> in 2020. <br>
-    To learn more, please make some selections! </p>
-        
+    <p>This data story is created for course "Data Visualization" at KU Leuven. Our goal is to visualize 
+    the <strong>changes in human mobility</strong> in 2020. 
+    <br>
+    <h3> Google Mobility Data </h3>
+    
+    Since the beginning of the Covid-19 pandemic, Google has provided open-source <a href="https://www.google.com/covid19/mobility/"> Mobility Reports.</a> From Google: "These Community Mobility Reports aim to provide insights into what has changed in response to policies aimed at combating COVID-19. The reports chart movement trends over time by geography, across different categories of places such as retail and recreation, groceries and pharmacies, parks, transit stations, workplaces, and residential."<br> <br>
+    
+    <strong>The data show how visits and length of stay at different places change compared to a baseline. The baseline is the median value, for the corresponding day of the week, during the 5-week period Jan 3–Feb 6, 2020.</strong>
+    <br> <br>
+    
+    
+    <h3> Other Data Sources </h3>
+    
+    To add information, we used data on Covid-19 cases from Our World in Data. We also used another dataset on Covid-19 response measures.
+    
+    <br>
+    <br>
+    Let's get started! 
+    <br>
     <br>
     
+    <h3>Continent View: Which nation has the highest change in mobility at a point in time?</h3>
     
-    
-
-    <!-- Waffle Chart 
-    <div style="margin: 0 auto; width:100%; height:550px; overflow:hidden;">
-    <object type="text/html" data="wafflechart.html"
-            style="width:100%; height:100%; margin:5%;">
-    </object>
-    </div>-->
-
-
-    
-    <h3>Which nation has the highest change in mobility at a point in time?</h3>
-
+    Here we will write some information about what data we use, what time period, and what
+    the globe shows 
 
     <!-- Globe -->
-    <div style="margin: 0 auto; width:100%; height:750px; overflow:hidden;">
+    <div style="margin-top: -130px; width:100%; height:700px; overflow:hidden;">
     <object type="text/html" data="https://knighttoken.github.io"
             style="width:100%; height:100%; margin:5%;">
     </object>
     </div>
 
     <br><br>
-   
     
     <!-- Barchart 
     <div style="margin: 0 auto; width:100%; height:550px; overflow:hidden;">
@@ -59,14 +64,18 @@ title:  Mobility in the Age of Covid-19
     </object>
     </div>-->
 
-    
+    Let's take a look at the continent we're currently on: Europe.
 
     <br><br>
     
-    <h3>How do Nations Compare Across Time and Mobility Indicator?</h3>
+    <h3>Europe: How do Nations Compare Across Time and Mobility Indicator?</h3>
+    
+    <p> Here we will describe this plot.</p>
+    
+    <p> Instruction: Select three distinct countries, select a time frame, click "filter"! </p>
     
     <!-- Parallel Coordinate -->
-    <div id="parallel" style="margin: 0 auto; width:130%; height:550px; overflow:hidden;">
+    <div id="parallel" style="margin-left:-40px; width:130%; height:550px; overflow:hidden;">
     <object type="text/html" data="parallel_coordinate_final.html"
             style="width:100%; height:100%; margin:5%;">
     </object>
@@ -74,8 +83,7 @@ title:  Mobility in the Age of Covid-19
     
     <br>
     
-    <h3>Comparison of European Countries</h3>
-    
+    <h3> Let's see how covid cases might play a role </h3>
     <p>x-axis: New cases per million (average over 1 month). <br> y-axis: Net change in mobility (average over
     all indicators, average over 1 month).</p>
     
@@ -94,7 +102,7 @@ title:  Mobility in the Age of Covid-19
 
     <br><br>
     
-    <h3>Within an Individual Nation, How has Daily Mobility Changed over Time?</h3>
+    <h3>Country View: Within an Individual European Nation, How has Daily Mobility Changed over Time?</h3>
     
     
     <div class="form-group row">
