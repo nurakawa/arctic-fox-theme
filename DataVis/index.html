@@ -21,14 +21,23 @@ title:  Mobility in the Age of Covid-19
   <body>
 
     
-    <p>This is prototype for course "Data Visualization" at KU Leuven. My goal is to visualize 
+    <p>This is prototype for course "Data Visualization" at KU Leuven. Our goal is to visualize 
     the <strong>changes in human mobility</strong> in 2020. <br>
-    The <strong>calendar heatmap</strong> shows, for different mobility types and different European countries, 
-    the daily percent change relative to baseline. Below, the <strong>linear calendar</strong> shows the timeline
-    of Covid-19 response measures taken by the country of interest.
     To learn more, please make some selections! </p>
-    
+        
     <br>
+    
+    
+    
+
+    <!-- Waffle Chart 
+    <div style="margin: 0 auto; width:100%; height:550px; overflow:hidden;">
+    <object type="text/html" data="wafflechart.html"
+            style="width:100%; height:100%; margin:5%;">
+    </object>
+    </div>-->
+
+
     
     <h3>Which nation has the highest change in mobility at a point in time?</h3>
 
@@ -41,6 +50,18 @@ title:  Mobility in the Age of Covid-19
     </div>
 
     <br><br>
+   
+    
+    <!-- Barchart 
+    <div style="margin: 0 auto; width:100%; height:550px; overflow:hidden;">
+    <object type="text/html" data="barplot.html"
+            style="width:100%; height:100%; margin:5%;">
+    </object>
+    </div>-->
+
+    
+
+    <br><br>
     
     <h3>How do Nations Compare Across Time and Mobility Indicator?</h3>
     
@@ -50,6 +71,25 @@ title:  Mobility in the Age of Covid-19
             style="width:100%; height:100%; margin:5%;">
     </object>
     </div>
+    
+    <br>
+    
+    <h3>Comparison of European Countries</h3>
+    
+    <p>x-axis: New cases per million (average over 1 month). <br> y-axis: Net change in mobility (average over
+    all indicators, average over 1 month).</p>
+    
+    <p><strong>Instructions:</strong> Start by selecting a month. Hover the mouse over the scatterplot. It should look like a + sign.
+    Then, drag and select the bubbles of interest. A chart will appear! To remove it, drag and select some
+    empty space. To change month, click a button!</p>
+    
+    <!-- Bubble Chart -->
+    <div style="margin: 0 auto; width:100%; height:500px; overflow:hidden;">
+    <object type="text/html" data="bubble.html"
+            style="width:100%; height:100%; margin:5%;">
+    </object>
+    </div>
+
 
 
     <br><br>
@@ -144,6 +184,7 @@ title:  Mobility in the Age of Covid-19
               updateLineCalendar(selectedCountry)
               updateChart(selectedGroup, selectedCountry)
             })
+            
               
 
         function updateChart(selectedGroup, selectedCountry){
@@ -187,7 +228,7 @@ title:  Mobility in the Age of Covid-19
         var domainmax = d3.max(newdata, function(d){ return +d[selectedGroup]});
         
         // Sequential Scale for Legend
-        var sequentialScale = d3.scaleSequential(d3.interpolateRdYlBu).domain([domainmax,domainmin]);
+        var sequentialScale = d3.scaleSequential(d3.interpolateReds).domain([domainmax,domainmin]);
         var svg = d3.select("svg");
         svg.append("g")
         .style("font-size", "10px")
@@ -217,16 +258,16 @@ title:  Mobility in the Age of Covid-19
     <script src="d3.linearcalendar.js"></script>
     
     <!-- Reponse Key -->
-    <h4>Key</h4>
+    <strong>Key</strong>
     <p style="font-size:12px">
-    1 - Ban on All Events <br> 
-    2 - Close Entertainment Venues <br>
-    3 - Mask Mandatory in All Spaces <br>
+    1 - Ban on All Events  
+    2 - Close Entertainment Venues 
+    3 - Mask Mandatory in All Spaces 
     4 - Close Non-Essential Stores <br>
-    5 - Close Resaurants and Cafes <br>
-    6 - Limit Social Circle <br>
-    7 - Stay at Home Order <br>
-    8 - Teleworking <br>
+    5 - Close Resaurants and Cafes 
+    6 - Limit Social Circle 
+    7 - Stay at Home Order 
+    8 - Teleworking 
     9 - Workplace Closures
 </p>
 
@@ -262,7 +303,7 @@ title:  Mobility in the Age of Covid-19
                 'start': 'inicio',
                 'end': 'fin',
                 'domain': ['01-01', '31-12'],
-                'color': '#A01897',
+                'color': 'red',
                 'dateformat': '%d-%m',
                 'title': 'Covid-19 Response Measures',
                 'source': '<a href="https://www.ecdc.europa.eu/en/publications-data/download-data-response-measures-covid-19"></a>',
