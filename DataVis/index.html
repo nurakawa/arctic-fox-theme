@@ -119,7 +119,7 @@ title:  Mobility in the Age of Covid-19
           <option value="Denmark">Denmark</option> 
           <option value="Estonia">Estonia</option> 
           <option value="Finland">Finland</option> 
-          <option value="France">France</option> 
+          <option value="France" selected>France</option> 
           <option value="Germany">Germany</option> 
           <option value="Greece">Greece</option> 
           <option value="Hungary">Hungary</option> 
@@ -150,7 +150,7 @@ title:  Mobility in the Age of Covid-19
       <option value="grocery and pharmacy">grocery and pharmacy</option>
       <option value="parks">parks</option>
       <option value="transit stations">transit stations</option>
-      <option value="workplaces">workplaces</option>
+      <option value="workplaces" selected>workplaces</option>
       <option value="residential">residential</option>
       <option value="driving">driving</option>
     </select>
@@ -167,6 +167,15 @@ title:  Mobility in the Age of Covid-19
     <script src="d3.calendar.js"></script>
     <script>
             // Initiate
+            updateChart("residential", "France")
+            
+           d3.select("#calendarCountry").on("change", function(d){
+              selectedCountry = String(this.value);
+              d3.select('#calendar .chart').remove();
+              d3.select('#exports').selectAll("*").remove();
+              updateChart(selectedGroup, selectedCountry)
+              updateLineCalendar(selectedCountry)
+            })
             
             // Update Calendar Heatmap
             d3.select("#ddlViewBy").on("change", function(d){
@@ -320,6 +329,24 @@ title:  Mobility in the Age of Covid-19
         })
     }
     </script>
+    <br>
+    <br>
+    On every calendar heatmap, we notice something unique: a strong change in mobility on December 24 and December 25. The most likely cause? Christmas Day! Let's take a closer look:
+    <br>
+    <br>
+    
+    
+    <h3> Across Europe, how did Mobility change on December 24? </h3>
+    
+    <p>Move your cursor over each bar to get details! </p>
+    
+        <!-- Radial -->
+    <div style="margin-left: -200px; width:150%; height:1000px; overflow:hidden;">
+    <object type="text/html" data="radial_daily.html"
+            style="width:100%; height:100%; margin:5%;">
+    </object>
+    </div>
+
     
     
     
