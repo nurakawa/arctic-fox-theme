@@ -1,6 +1,6 @@
 ---
 layout: datavis
-title:  Mobility in the Age of Covid-19
+title:  The World in the Age of Covid-19
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -20,34 +20,34 @@ title:  Mobility in the Age of Covid-19
   <body>
   
   <h4>by Minh Cuong Hoang, Maria Nankova, Shourya Bhattacharya, and Nura Kawa</h4>
-    
-    <p>This data story is created for course "Data Visualization" at KU Leuven. Our goal is to visualize 
-    the <strong>changes in human mobility</strong> in 2020. 
-    <br>
-    <h3> Google Mobility Data </h3>
+  <center><hr style="border:0;border-top:1px solid #555;margin:10;height:1px;width:500px" /></center>
+  
+    It goes without saying that 2020 has been characteristically marked by the Covid-19 pandemic. One of the primary tools that policy makers across the world have chosen to curb the spread of Covid-19 is to restrict public mobility. Consequently, most nations experienced economic decline. Over time, such regulations have been repeatedly enforced and relaxed in response to existing numbers of Covid cases. The objective of this project is to visually explore how mobility has changed throughout 2020. Additionally, we look for patters that reflect the effect of changes in mobility on the economy of individual nations. 
+    <br> <br>
+
+    <h3> Data </h3>
     
     Since the beginning of the Covid-19 pandemic, Google has provided open-source <a href="https://www.google.com/covid19/mobility/"> Mobility Reports.</a> From Google: "These Community Mobility
     Reports aim to provide insights into what has changed in response to policies aimed at combating COVID-19. The reports chart movement trends over time by geography, across different categories
-    of places such as retail and recreation, groceries and pharmacies, parks, transit stations, workplaces, and residential."<br> <br>
+    of places such as retail and recreation, groceries and pharmacies, parks, transit stations, workplaces, and residential." <strong>From February 6, 2020, the data show for each day how visits and length of stay at different places change compared to a baseline. The baseline is the median value, for the corresponding day of the week, during the 5-week
+    period Jan 3–Feb 6, 2020.</strong> <br>
     
-    <strong>The data show how visits and length of stay at different places change compared to a baseline. The baseline is the median value, for the corresponding day of the week, during the 5-week
-    period Jan 3–Feb 6, 2020.</strong>
-    <br> <br>
-    
-    <h3> Other Data Sources </h3>
-    To add information, we used data on Covid-19 cases from Our World in Data. We also used another dataset on Covid-19 response measures.
+    To add information, we used data on Covid-19 and economic indicators from <a href="https://ourworldindata.org/coronavirus-data"> Our World in Data</a>. We also obtained information about Covid-19 response measures in Europe from the European Center for Disease Prevention and Control, found <a href="https://www.ecdc.europa.eu/en/publications-data/download-data-response-measures-covid-19"> here</a>. 
     
     <br>
     <br>
-    Let's get started! 
+  <center><hr style="border:0;border-top:1px solid #555;margin:10;height:1px;width:500px" /></center>
     <br>
-    <br>
-    
         
-    <h3>Continent View: Which nation has the highest change in mobility at a point in time?</h3>
+    <h3>A Global View</h3>
     
-    Here we will write some information about what data we use, what time period, and what
-    the globe shows 
+    We begin with the following question: <br> <strong>Throughout 2020, which nation saw the highest change in mobility?</strong>
+    
+    <br> <br>
+    Below, the interactive globe shows the nation with the largest absolute change in mobility from START DATE to END DATE in 2020. Notice that, in particular, Latin American countries see a change in mobility sequentially in the middle of the year.
+    
+    <br> <br>
+    <i>To interact with the globe, click on a country name in the list!</i>
 
     <!-- Globe -->
     <div style="margin-top: -130px; width:100%; height:700px; overflow:hidden;">
@@ -55,9 +55,27 @@ title:  Mobility in the Age of Covid-19
             style="width:100%; height:100%; margin:5%;">
     </object>
     </div>
+        
+    <br> <br>
+    Intuitively, we would think that the nation with the largest change in mobility at a time point also experienced the largest peak in covid cases or deaths. Could that be the case? <br> <br>
+    
+    <i> Below, you can see which continent has the highest incidence of covid cases or deaths over each week in 2020. Hover your cursor over a bar to see the value. </i>
+    
+     <!-- Barchart -->
+    <div style="margin: 0 auto; width:100%; height:420px; overflow:hidden;">
+    <object type="text/html" data="html/barplot.html"
+            style="width:100%; height:100%; margin:5%;">
+    </object>
+    </div>
+    
+    <br>
+    There seems to be some relationship, but not strong. When looking at cases, we see a trend from Europe to North and South America. For deaths, South America dominates the middle of 2020, while Europe dominates the beginning and end of the year. <br> <br>
+    
+    Taking an overall look at 2020, we find the above trend to be confirmed. The parts of the world with the largest number of deaths per million is indeed Europe and South America. Europe in particular looks to be the hardest hit. Additionally, Europe and South America show a decrease in GDP, while parts of Africa and Asia seem to have taken less of a hit. At no point in time did the barplot show Africa as the continent leading in covid cases and deaths; Asia only lead in the beginning of the year, and showed remarkably low numbers.
 
     <br><br>
-    
+
+<i> Place your cursor on a country to see more information! </i>    
     <!-- World Map -->
     <script type='text/javascript' src='https://dub01.online.tableau.com/javascripts/api/viz_v1.js'></script>
     <!--<div class='tableauPlaceholder' style='width: 1848px; height: 896px;'><object class='tableauViz' width='1848' height='896'-->
@@ -76,23 +94,19 @@ title:  Mobility in the Age of Covid-19
    
     <br><br>
     
-    <!-- Barchart 
-    <div style="margin: 0 auto; width:100%; height:550px; overflow:hidden;">
-    <object type="text/html" data="html/barplot.html"
-            style="width:100%; height:100%; margin:5%;">
-    </object>
-    </div>-->
-
-    Let's take a look at the continent we're currently on: Europe.
+    With Europe suffering heavily in numbers of Covid and facing a slowing economy, let's examine mobility in Europe more closely.
 
     <br><br>
+
+  <center><hr style="border:0;border-top:1px solid #555;margin:10;height:1px;width:500px" /></center>
     
-    <h3>Europe: How do Nations Compare Across Time and Mobility Indicator?</h3>
+    <h3>A European View</h3>
     
-    <p> Here we will describe this plot.</p>
+    While, in the global view, Europe appears similar as a whole, mobility varies between countries. In the plot below, we can compare daily change in mobility between three countries for any number of days in 2020. There are a lot of insights that can be gathered with this visualization tool. <br> <br>
     
-    <p> Instruction: Select three distinct countries, select a time frame, click "filter"! </p>
+    For instance, if we select France, Sweden and United Kingdom for the month of May, we notice that France has the most decrease in mobility, while Sweden sees an increase in mobility in most dimensions. French increase their mobility to grocery and pharmacy, while Swedish go more to parks. French and British increase their time at home, while the Swedish have nearly zero net change. <br><br>
     
+    <i> Select three distinct countries, select a time frame, click "filter"! </i>
     <!-- Parallel Coordinate -->
     <div id="parallel" style="margin-left:-40px; width:130%; height:550px; overflow:hidden;">
     <object type="text/html" data="html/parallel_coordinate_final.html"
@@ -100,15 +114,14 @@ title:  Mobility in the Age of Covid-19
     </object>
     </div>
     
-    <br>
+    <br><br>
     
-    <h3> Let's see how covid cases might play a role </h3>
-    <p>x-axis: New cases per million (average over 1 month). <br> y-axis: Net change in mobility (average over
-    all indicators, average over 1 month).</p>
+    Let's see how covid cases might play a role in this. In the scatterplot below, we plot the monthly average number of new cases per million against the net change in mobility (average over
+    all indicators, average over 1 month). <br><br>
     
-    <p><strong>Instructions:</strong> Start by selecting a month. Hover the mouse over the scatterplot. It should look like a + sign.
+    <i>Start by selecting a month. Hover the mouse over the scatterplot. It should look like a + sign.
     Then, drag and select the bubbles of interest. A chart will appear! To remove it, drag and select some
-    empty space. To change month, click a button!</p>
+    empty space. To change month, click a button!</i>
     
     <!-- Bubble Chart -->
     <div style="margin: 0 auto; width:100%; height:500px; overflow:hidden;">
@@ -117,10 +130,12 @@ title:  Mobility in the Age of Covid-19
     </object>
     </div>
 
+    It's interesting to look at the change in pattern over time. First, it seems that the net change in mobility is not strongly correlated with covid in Europe - this is similar to what we observed in the global view. In February, the outlying country is Italy - it had by far the highest number of cases per million. In May, the outlier is Sweden - a nation that famously did not enforce a national lockdown. Mobility hardly changed from baseline. As time goes on, neighboring countries tend to form clusters.
+    
+    
     <br><br>
     
-    <h3>How has the change in Covid Cases over time impacted GDP?</h3>
-    
+    How does Europe look economy-wise? The animated visualizations below show how the number of covid cases per million and unemployment change over time in each European nation. There does not seem to be a strong link. While the quarterly unemployment rate in Europe did increase, it did not seem to do so in response to a surge in covid cases. <br><br> 
     <!-- Covid Cases Per Million 
     for help with aligning https://stackoverflow.com/questions/19089933/how-to-position-two-elements-side-by-side-using-css
     -->
@@ -141,9 +156,17 @@ title:  Mobility in the Age of Covid-19
     </div>
     
     </div>  
-          
     
-    <h3>Country View: Within an Individual European Nation, How has Daily Mobility Changed over Time?</h3>
+            <center><hr style="border:0;border-top:1px solid #555;margin:10;height:1px;width:500px" /></center>
+
+    
+    <h3>Country-Level View</h3>
+    
+    To get insight into individual nations, let's look at daily mobility within a country. We can see below, for each nation and each mobility indicator, how mobility has changed over time. We also see a linear calendar showing the beginning and end of covid measures. <br><br>
+    
+    If we look at France, there appears to be a strong correlation between mobility and measures, especially residential and workplace mobility. The measures start and stop at roughly the same time, making the connection easy to see. Other countries stagger their measures - for example, Italy had many measures from the beginning. Driving in particular seems to increase when there are fewer measures in place and decrease when there are many measures in place.
+    
+    Finally, Sweden is an interesting example. Only two measures were in place in all of 2020. However, we do see some patterns in mobility that were seen by other nations. For instance, a relative decrease in workplace mobility on weekends, and an increase of mobility in parks in the summer. Most nations have these patterns, as well as sharp changes on national holidays (for instance, look at July 14 in France). 
     
     <!-- Calendar Plot -->
     <div style="margin: 0 auto; width:100%; height:600px; overflow:hidden;">
@@ -156,9 +179,9 @@ title:  Mobility in the Age of Covid-19
     On every calendar heatmap, we notice something unique: a strong change in mobility on December 24 and December 25. The most likely cause? Christmas Day! Let's take a closer look:
     <br>
     <br>
-        <h3> Across Europe, how did Mobility change on December 24? </h3>
     
-    <p>Move your cursor over each bar to get details! </p>
+    Below, we see a radial bar chart of each European nation and the change in mobility on December 24. MORE INFORMATION SOON.  <br><br>
+    <i>Move your cursor over each bar to get details! </i>
     
         <!-- Radial -->
     <div style="margin-left: -200px; width:150%; height:1000px; overflow:hidden;">

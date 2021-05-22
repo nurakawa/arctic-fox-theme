@@ -4,24 +4,17 @@ class BarChart{
         let self = this;
         this.selection = selection;
         this.data = data;
+        
 
         // Graph configuration
         this.cfg = {
             margin: {top: 40, right: 30, bottom: 50, left: 40},
             key: 'key',
-            //label: 'date',
-            label: ["2020-01-01","2020-01-06","2020-01-13","2020-01-20","2020-01-27",
-"2020-02-03","2020-02-10","2020-02-17","2020-02-24","2020-03-02", "2020-03-09",
-"2020-03-16", "2020-03-23", "2020-03-30", "2020-04-06", "2020-04-13", "2020-04-20", 
-"2020-04-27", "2020-05-04", "2020-05-11", "2020-05-18", "2020-05-25",
-"2020-06-01" ,"2020-06-08", "2020-06-15", "2020-06-22", "2020-06-29", "2020-07-06", 
-"2020-07-13", "2020-07-20", "2020-07-27", "2020-08-03", "2020-08-10",
-"2020-08-17","2020-08-24","2020-08-31","2020-09-07","2020-09-14","2020-09-21","2020-09-28",
-"2020-10-05","2020-10-12","2020-10-19","2020-10-26","2020-11-02","2020-11-09","2020-11-16", 
-"2020-11-23", "2020-11-30", "2020-12-07", "2020-12-14", "2020-12-21", "2020-12-28"],
+            label2: 'location_cases',
+            label: 'date',
             color: 'steelblue',
             greycolor: '#CCC',
-            yscaleformat: '0.00f',
+            yscaleformat: '.2f',
             currentkey: false,
             title: false,
             source: false,
@@ -81,11 +74,11 @@ class BarChart{
         }
 
         // GRID
-        this.yGrid = this.g.append("g")           
-            .attr("class", "grid grid--y")
-            .call(self.make_y_gridlines()
-                .tickSize(-self.cfg.width)
-                .ticks(3, self.cfg.yscaleformat));
+        //this.yGrid = this.g.append("g")           
+          //  .attr("class", "grid grid--y")
+           // .call(self.make_y_gridlines()
+            //    .tickSize(-self.cfg.width)
+              //  .ticks(3, self.cfg.yscaleformat));
 
         // AXIS
         this.xAxis = this.g.append("g")
@@ -106,6 +99,24 @@ class BarChart{
             .attr('transform', function(d, i){
                 return 'translate('+ self.xScale(d[self.cfg.label]) +',0)';
         })
+        
+        // COLORPICKER
+        var accent = d3.scaleOrdinal(d3.schemeTableau10);
+        
+        function colorPicker(v) {
+        if (v == "Asia") {
+        return accent(1);}
+        else if (v == "Europe") {
+        return accent(2);} 
+        else if (v == "North America") {
+        return accent(3);}
+        else if (v == "South America") {
+        return accent(4);}
+        else if (v == "Africa") {
+        return accent(5);}
+        else {
+        return "#111111";}
+        }
 
         this.rects = this.itemg.append('rect')
             .attr('x', 0)
@@ -117,12 +128,14 @@ class BarChart{
                 return self.cfg.height - self.yScale(+d[self.cfg.key]);
             })
             .attr('fill', function(d){
-                return !self.cfg.currentkey || d[self.cfg.label] == self.cfg.currentkey ? self.cfg.color : self.cfg.greycolor;
+                var c = String(d[self.cfg.label2]);
+                return !self.cfg.currentkey || d[self.cfg.key] == self.cfg.currentkey ? colorPicker(c): self.cfg.greycolor;
             });
 
         this.rects.append("title")
+            .attr('text-anchor', 'end')
             .text(function(d) { return d[self.cfg.key]});
-
+            
         if(this.cfg.mean){
             this.mean = this.g.append('line')
                 .attr('class', 'axis axis--mean')

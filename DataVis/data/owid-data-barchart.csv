@@ -1,0 +1,50 @@
+date,location_cases,location_deaths,new_cases_per_million,new_deaths_per_million
+2020-01-27,Asia,Asia,0.174,0.006
+2020-02-03,Asia,Asia,0.666,0.014
+2020-02-10,Asia,Asia,0.547,0.023
+2020-02-17,Asia,Asia,0.417,0.021
+2020-02-24,Asia,Asia,0.105,0.034
+2020-03-02,Europe,Europe,0.757,0.025
+2020-03-09,Europe,Europe,4.197,0.156
+2020-03-16,Europe,Europe,14.687,0.669
+2020-03-23,Europe,Europe,35.271,2.092
+2020-03-30,Europe,Europe,43.617,4.063
+2020-04-06,North America,Europe,55.512,4.743
+2020-04-13,North America,Europe,49.222,4.312
+2020-04-20,North America,North America,55.747,4.087
+2020-04-27,North America,North America,45.038,3.017
+2020-05-04,North America,North America,46.616,2.976
+2020-05-11,North America,North America,37.999,2.201
+2020-05-18,South America,North America,48.554,2.517
+2020-05-25,South America,South America,53.475,2.711
+2020-06-01,South America,South America,58.125,2.068
+2020-06-08,South America,South America,61.556,3.533
+2020-06-15,South America,South America,78.176,2.266
+2020-06-22,South America,South America,84.051,2.403
+2020-06-29,South America,South America,88.102,2.846
+2020-07-06,North America,South America,88.361,2.753
+2020-07-13,North America,South America,115.575,2.902
+2020-07-20,North America,South America,121.835,3.118
+2020-07-27,South America,South America,127.934,4.005
+2020-08-03,South America,South America,94.844,3.492
+2020-08-10,South America,South America,115.993,3.563
+2020-08-17,South America,South America,107.981,3.324
+2020-08-24,South America,South America,116.306,3.763
+2020-08-31,South America,South America,172.291,3.187
+2020-09-07,Europe,South America,68.119,15.162
+2020-09-14,South America,South America,97.263,2.872
+2020-09-21,North America,South America,103.055,2.496
+2020-09-28,Europe,South America,91.705,2.505
+2020-10-05,North America,North America,125.986,5.704
+2020-10-12,Europe,South America,153.271,1.98
+2020-10-19,Europe,South America,220.648,2.855
+2020-10-26,Europe,Europe,379.551,2.562
+2020-11-02,Europe,Europe,462.744,3.553
+2020-11-09,Europe,Europe,325.928,4.588
+2020-11-16,Europe,Europe,314.325,5.414
+2020-11-23,North America,Europe,327.889,5.8
+2020-11-30,North America,Europe,303.971,5.765
+2020-12-07,North America,Europe,362.542,5.303
+2020-12-14,North America,Europe,362.099,5.454
+2020-12-21,North America,Europe,368.073,5.558
+2020-12-28,North America,Europe,328.161,5.603
