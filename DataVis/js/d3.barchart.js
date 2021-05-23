@@ -8,7 +8,7 @@ class BarChart{
 
         // Graph configuration
         this.cfg = {
-            margin: {top: 40, right: 30, bottom: 50, left: 40},
+            margin: {top: 30, right: 30, bottom: 34, left: 40},
             key: 'key',
             label2: 'location_cases',
             label: 'date',
@@ -20,6 +20,7 @@ class BarChart{
             source: false,
             mean: false,
             meanlabel: false,
+            xticks: false,
         };
 
         Object.keys(config).forEach(function(key) {
@@ -44,7 +45,15 @@ class BarChart{
         var self = this;
 
         this.xScale.domain(this.data.map(function(d) { return d[self.cfg.label]; }));
-        this.yScale.domain([d3.max(this.data, function(d){ return +d[self.cfg.key]}),0])
+        //this.yScale.domain([d3.max(this.data, function(d){ return +d[self.cfg.key]}),0])
+        
+        if (self.cfg.key == 'new_cases_per_million'){
+           this.yScale.domain([400,0])
+        }
+        
+        if (self.cfg.key == 'new_deaths_per_million'){
+        this.yScale.domain([10,0])
+        }
 
         this.svg = this.selection.append('svg')
             .attr("class", "chart barchart")
@@ -74,14 +83,15 @@ class BarChart{
         }
 
         // GRID
-        //this.yGrid = this.g.append("g")           
-          //  .attr("class", "grid grid--y")
-           // .call(self.make_y_gridlines()
-            //    .tickSize(-self.cfg.width)
-              //  .ticks(3, self.cfg.yscaleformat));
+        this.yGrid = this.g.append("g")           
+            .attr("class", "grid grid--y")
+            .call(self.make_y_gridlines()
+                .tickSize(-self.cfg.width)
+                .ticks(2, self.cfg.yscaleformat));
 
         // AXIS
-        this.xAxis = this.g.append("g")
+        if(self.cfg.xticks){
+                this.xAxis = this.g.append("g")
             .attr("class", "axis axis--x")
             .attr("transform", "translate(0," + this.cfg.height + ")")
             .call(d3.axisBottom(self.xScale));
@@ -89,8 +99,10 @@ class BarChart{
         this.xAxis.selectAll("text") 
             .style("text-anchor", "end")
             .attr("dx", "-.8em")
-            .attr("dy", "-.6em")
+           .attr("dy", "-.6em")
             .attr("transform", "rotate(-90)");
+
+        }
 
         this.itemg = this.g.selectAll('.itemgroup')
             .data(this.data)
@@ -128,12 +140,17 @@ class BarChart{
                 return self.cfg.height - self.yScale(+d[self.cfg.key]);
             })
             .attr('fill', function(d){
-                var c = String(d[self.cfg.label2]);
-                return !self.cfg.currentkey || d[self.cfg.key] == self.cfg.currentkey ? colorPicker(c): self.cfg.greycolor;
+                return !self.cfg.currentkey || d[self.cfg.label] == self.cfg.currentkey ? self.cfg.color : self.cfg.greycolor;
             });
 
+            //.attr('fill', function(d){
+                
+                //var c = String(d[self.cfg.label2]);
+                //return !self.cfg.currentkey || d[self.cfg.key] == self.cfg.currentkey ? colorPicker(c): self.cfg.greycolor;
+            //});
+
         this.rects.append("title")
-            .attr('text-anchor', 'end')
+            .attr('text-anchor', 'top')
             .text(function(d) { return d[self.cfg.key]});
             
         if(this.cfg.mean){

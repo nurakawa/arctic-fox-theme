@@ -14,10 +14,10 @@
     <!-- Underneath: barplot -->
     <select id="indicator">
       <option value="new_cases_per_million">new cases per million</option>
-      <option value="new_deaths_per_million">new deaths per million</option>
+      <option value="new_deaths_per_million" selected>new deaths per million </option>
     </select>
 
-    <div id="Exports" style="width: 100%; height: 300px;"></div>
+    <div id="Exports" style="width: 100%; height: 135px;"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script>
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
@@ -39,42 +39,103 @@
         return "location_deaths";}
         }
         
-        updateBar('new_cases_per_million')
+
+        updateBar('new_deaths_per_million')
             
         function updateBar(selectedInd){
 
         d3.csv('../data/owid-data-barchart.csv', function(data) {
-          
-          //var newdata = data.filter(function(d){ return d.location == selectedCountry });
-         var grafico = new BarChart(d3.select('#Exports'), data, {
+        
+         var loc = locPicker(selectedInd);
+         var accent = d3.scaleOrdinal(d3.schemeTableau10);
+
+         
+         var newdata2 = data.filter(function(d){ return d.location == "Asia" });
+         var grafico = new BarChart(d3.select('#Exports'), newdata2, {
                 'key': selectedInd || 0,
                 'label': 'date',
-                'label2': locPicker(selectedInd),
+                'label2': selectedInd,
                 'mean': {},
                 'meanlabel': '',
-                'color': 'darkgrey',
-                'title': 'Weekly ' + selectedInd,
+                'color': accent(1),
+                'title': 'Asia',
+                'source': '',
+                'xticks': true,
+            });
+
+          
+         var newdata = data.filter(function(d){ return d.location == "Europe" });
+         var grafico = new BarChart(d3.select('#Exports'), newdata, {
+                'key': selectedInd || 0,
+                'label': 'date',
+                'label2': selectedInd,
+                'mean': {},
+                'meanlabel': '',
+                'color': accent(2),
+                'title': 'Europe',
+                'xticks': true,
                 'source': '',
             });
             
-          var ordinal = d3.scaleOrdinal(d3.schemeTableau10)
-          .domain(["Asia", "Europe", "North America", "South America", "Africa"])
+            
+         var newdata3 = data.filter(function(d){ return d.location == "North America" });
+         var grafico = new BarChart(d3.select('#Exports'), newdata3, {
+                'key': selectedInd || 0,
+                'label': 'date',
+                'label2': selectedInd,
+                'mean': {},
+                'meanlabel': '',
+                'color': accent(3),
+                'title': 'North America',
+                'xticks': true,
+                'source': '',
+            });
+
+         var newdata4 = data.filter(function(d){ return d.location == "South America" });
+         var grafico = new BarChart(d3.select('#Exports'), newdata4, {
+                'key': selectedInd || 0,
+                'label': 'date',
+                'label2': selectedInd,
+                'mean': {},
+                'meanlabel': '',
+                'color': accent(4),
+                'title': 'South America',
+                'xticks': true,
+                'source': '',
+            });
+            
+         var newdata5 = data.filter(function(d){ return d.location == "Africa" });
+         var grafico = new BarChart(d3.select('#Exports'), newdata5, {
+                'key': selectedInd || 0,
+                'label': 'date',
+                'label2': selectedInd,
+                'mean': {},
+                'meanlabel': '',
+                'color': accent(5),
+                'title': 'Africa',
+                'source': '',
+                'xticks': true,
+            });
+
+            
+          //var ordinal = d3.scaleOrdinal(d3.schemeTableau10)
+          //.domain(["Asia", "Europe", "North America", "South America", "Africa"])
           
-          var svg = d3.select("svg");
+          //var svg = d3.select("svg");
           
-          svg.append("g")
-          .attr("class", "legendOrdinal")
-          .attr("transform", "translate(50,83)");
+          //svg.append("g")
+          //.attr("class", "legendOrdinal")
+          //.attr("transform", "translate(50,10)");
           
-          var legendOrdinal = d3.legendColor()
-          .shape("path", d3.symbol().type(d3.symbolSquare).size(30)())
-          .shapePadding(3)
+          //var legendOrdinal = d3.legendColor()
+          //.shape("path", d3.symbol().type(d3.symbolSquare).size(30)())
+          //.shapePadding(3)
           //use cellFilter to hide the "e" cell
-          .cellFilter(function(d){ return d.label !== "e" })
-          .scale(ordinal);
+          //.cellFilter(function(d){ return d.label !== "e" })
+          //.scale(ordinal);
           
-          svg.select(".legendOrdinal")
-          .call(legendOrdinal);
+          //svg.select(".legendOrdinal")
+          //.call(legendOrdinal);
           
         
          
