@@ -48,11 +48,11 @@ class BarChart{
         //this.yScale.domain([d3.max(this.data, function(d){ return +d[self.cfg.key]}),0])
         
         if (self.cfg.key == 'new_cases_per_million'){
-           this.yScale.domain([400,0])
+           this.yScale.domain([21,0])
         }
         
         if (self.cfg.key == 'new_deaths_per_million'){
-        this.yScale.domain([10,0])
+        this.yScale.domain([4,0])
         }
 
         this.svg = this.selection.append('svg')
