@@ -8,7 +8,7 @@ class BarChart{
 
         // Graph configuration
         this.cfg = {
-            margin: {top: 30, right: 30, bottom: 34, left: 40},
+            margin: {top: 23, right: 30, bottom: 34, left: 40},
             key: 'key',
             label2: 'location_cases',
             label: 'date',
@@ -85,9 +85,10 @@ class BarChart{
         // GRID
         this.yGrid = this.g.append("g")           
             .attr("class", "grid grid--y")
+            //.attr("stroke", "red")
             .call(self.make_y_gridlines()
                 .tickSize(-self.cfg.width)
-                .ticks(2, self.cfg.yscaleformat));
+                .ticks(3, self.cfg.yscaleformat));
 
         // AXIS
         if(self.cfg.xticks){
