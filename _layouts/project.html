@@ -1,0 +1,107 @@
+---
+layout: default
+title: Project
+---
+
+<section class="archive">
+<div class="archive-item fadeInDown animated"><h2> CS </h2>
+</div>
+{% for post in site.posts %}
+{% capture tag %}{{ post.tag }}{% endcapture %}
+
+
+{% if tag == "CS" %}
+
+
+  {% unless forloop.first %}
+    </div>
+  </div>
+  {% endunless %}
+
+  <article>
+    <div class="post_title">
+      <a href="{{ post.url | absolute_url }}" title="{{ post.title }}">{{ post.title }}</a>
+    </div>
+  </article>
+
+
+  {% if forloop.last %}
+    </div>
+  </div>
+  {% endif %}
+
+  {% endif %}
+
+{% endfor %}
+
+<!-- STATISTICS -->
+
+
+<div class="archive-item fadeInDown animated"><h2> Statistics </h2>
+</div>
+{% for post in site.posts %}
+{% capture tag %}{{ post.tag }}{% endcapture %}
+
+
+{% if tag == "statistics" %}
+
+
+  {% unless forloop.first %}
+    </div>
+  </div>
+  {% endunless %}
+
+
+  <article>
+    <div class="post_title">
+      <a href="{{ post.url | absolute_url }}" title="{{ post.title }}">{{ post.title }}</a>
+      {{ post.description }}
+      <br><br>
+    </div>
+  </article>
+
+
+  {% if forloop.last %}
+    </div>
+  </div>
+  {% endif %}
+
+  {% endif %}
+
+{% endfor %}
+
+
+
+<!-- vis -->
+
+
+<div class="archive-item fadeInDown animated"><h2> Visualization </h2>
+</div>
+{% for post in site.posts %}
+{% capture tag %}{{ post.tag }}{% endcapture %}
+
+
+{% if tag == "vis" %}
+
+
+  {% unless forloop.first %}
+    </div>
+  </div>
+  {% endunless %}
+
+  <article>
+    <div class="post_title">
+      <a href="{{ post.url | absolute_url }}" title="{{ post.title }}">{{ post.title }}</a>
+    </div>
+  </article>
+
+
+  {% if forloop.last %}
+    </div>
+  </div>
+  {% endif %}
+
+  {% endif %}
+
+{% endfor %}
+</section>

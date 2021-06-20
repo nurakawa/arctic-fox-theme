@@ -8,7 +8,7 @@
 # 
 ################################################################################
 
-response_graph_df <- read.csv('/home/nkawa/nurakawa.github.io/DataVis/response_graphs_data_2021-04-15.csv',
+response_graph_df <- read.csv('/home/nkawa/nurakawa.github.io/assets/response_graphs_data_2021-06-09.csv',
                               stringsAsFactors = F)
 
 levels_to_keep <- c("MasksMandatoryAllSpaces",
@@ -27,8 +27,12 @@ ind_keep <- response_graph_df$Response_measure %in% levels_to_keep
 response_graph_df <- response_graph_df[ind_keep,]
 
 # Filter dates in 2020
-in_2020 <- grepl('2020', response_graph_df$date_start)
-response_graph_df <- response_graph_df[in_2020,]
+starts_in_2020 <- grepl('2020', response_graph_df$date_start) #& grepl('2020', response_graph_df$date_end)
+response_graph_df <- response_graph_df[starts_in_2020,]
+
+# if ends in 2021, make it NA
+ends_in_2021 <- grepl('2021', response_graph_df$date_end)
+response_graph_df$date_end[ends_in_2021] <- NA
 
 # Convert to factor
 response_graph_df$Response_measure = factor(response_graph_df$Response_measure)
@@ -44,13 +48,16 @@ response_graph_df[,'inicio'] = format(as.Date(response_graph_df$date_start),
 response_graph_df[,'fin'] = format(as.Date(response_graph_df$date_end),
                                       '%d-%m-%Y')
 
+# If end date is 2021, make it NA
+
+
 # Keep only necessary columns
 response_graph_df <- response_graph_df[,c('anyo', 'inicio', 'fin', 
                                           'Response_measure', 'Country')]
 
 # Export CSV
 write.csv(response_graph_df,
-          'response-graph.csv',
+          '/home/nkawa/nurakawa.github.io/assets/response-graph.csv',
           row.names = F,
           fileEncoding = 'UTF-8',
           quote = F)

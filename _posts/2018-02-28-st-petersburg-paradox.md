@@ -2,7 +2,8 @@
 layout: post
 title: The St. Petersburg Paradox
 date: 2018-02-28
-categories:
+tag: statistics
+description: Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
 ---
 
 <head>

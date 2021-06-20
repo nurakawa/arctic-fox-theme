@@ -3,6 +3,7 @@ layout: post
 title: Spectral Clustering
 date: 2018-02-24
 categories:
+tag: CS
 ---
 
 <head>

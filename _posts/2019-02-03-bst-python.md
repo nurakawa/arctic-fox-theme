@@ -2,7 +2,7 @@
 layout: post
 title: Binary Search Trees
 date: 2019-02-03
-categories:
+tag: CS
 ---
 
 _This post describes Binary Search Trees and includes a simple python implementation, which is available on [github](https://gist.github.com/nurakawa/e75541b9ccdc5ff4b0c2081336fec19b)._

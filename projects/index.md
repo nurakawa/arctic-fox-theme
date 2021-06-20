@@ -1,6 +1,6 @@
 ---
-layout: default
-title: Research
+layout: project
+title: Projects
 ---
 <style>
 hr {
@@ -13,28 +13,36 @@ hr {
 }
 </style>
 
-### exPrior: 
-UC Berkeley, Helmzholtz Institute
+### Statistics
+- exPrior
+- KDE blog post
+- Unimodal Density Estimation
+- St. Petersberg Paradox
 
 <hr>
-### geostatDB: an R Interface for Geostatistical Databases
-UC Berkeley, Helmzholtz Institute
-
-Description
-<br>
-<br>
-<br>
-
-links
+### Data Science
+- Do universities help minority students?
+- Topic Modeling of r/Bitcoin threads
+- Neural Networks project 
+- SVM project
+- Spectral Clustering
+- Bagging
 
 <hr>
-### A Genetic Algorithm for the Travelling Salesman Problem
-Course Project: Evolutionary Algorithms, KU Leuven <br>
-Python, OOP, Genetic Algorithms
+### Visualization
+- Masters Thesis
+- Mobility in Europe during Covid-19
+- Starbucks locations in California
 
 <hr>
-### Kernel Density Estimation Algorithms
-Course Project: Advanced Nonparametric Statistics 
+### Thoughts
+- Data Privacy: Browser Fingerprinting
 
 <hr>
-### Privacy and Big Data: FingerprintJS
+### Programming
+- BST
+- TSP: Genetic Algorithm
+- R vs Python Data Structures
+- OOP in R? S3 Classes 
+- geostatDB: an R interface for Geostatistical Databases
+

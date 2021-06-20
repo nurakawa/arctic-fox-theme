@@ -3,6 +3,7 @@ layout: post
 title: Kernel Density Estimation using density():<br> How does R select the bandwidth? 
 date: 2021-01-31
 categories:
+tag: statistics
 ---
 <head>
 <script type="text/javascript"
