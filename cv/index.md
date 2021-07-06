@@ -35,10 +35,13 @@ h2, h3{
 
 <ul style="list-style-type:none;">
 <li>Cucchi, K., Heße, F., Kawa, N., Wang, C., & Rubin, Y. (2019). Ex-situ priors: A Bayesian hierarchical framework for defining informative prior distributions in hydrogeology. Advances in Water Resources, 126, 65–78. https://doi.org/10.1016/j.advwatres.2019.02.003
+ </li> <br>
+ <li> Falk  Heße  et  al.  “exPrior:  An  R  Package  for  the  Formulation  of  Ex-Situ  Priors”.  In: The RJournal (2021). DOI:10.32614/RJ-2021-031. URL:https://journal.r-project.org/archive/2021/RJ-2021-031/index.html.
  </li>
 </ul>
 
 <h3>Software</h3>
 <ul style="list-style-type:none;">
-<li><a href='https://cran.r-project.org/web/packages/exPrior/index.html'> exPrior</a>: Prior Distributions Using a Bayesian Hierarchical Framework </li>
+<li><a href='https://github.com/GeoStat-Bayesian/exPrior'> exPrior</a>: Prior Distributions Using a Bayesian Hierarchical Framework </li>
+<li><a href='https://github.com/GeoStat-Bayesian/geostatDB'> geostatDB</a>: a unified R interface for geostatistical databases </li>
 </ul>
