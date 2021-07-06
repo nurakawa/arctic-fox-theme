@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kernel Density Estimation using density():<br> How does R select the bandwidth? 
+title: Kernel Density Estimation - How does R select the bandwidth? 
 date: 2021-01-31
 categories:
 tag: statistics
@@ -138,8 +138,6 @@ Now, let's suppose that the scientist found one more tree: a young tree that is 
 
 Knowing that our smallest tree is merely an outlier, we can assume that our underlying distribution has only one mode. Then, using another rule from Silverman, we can select a bandwidth that ensures unimodality. This yields the righthand plot, which is much more realistic.
 
-
-## References
 
 
 
